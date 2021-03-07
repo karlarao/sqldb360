@@ -127,6 +127,9 @@ where rownum < 6;
 ```
 
 
+# Example output 
+<img width="1166" src="https://user-images.githubusercontent.com/3683046/110233253-d83c1880-7ef0-11eb-8478-f6968adf4c4a.png">
+
 
 (Original README below)
 
