@@ -8,23 +8,15 @@ SQLdb360 is made of two independent tools, eDB360 (database-wide analysis) and S
 
 # Execute SQLD360 in batch mode
 
-## 1) Download the latest verified tag of the tool 
-https://github.com/karlarao/sqldb360/archive/v19.4.zip
+## 1) Download the tool 
+https://github.com/karlarao/sqldb360/archive/master.zip
 ```
-$ wget https://github.com/karlarao/sqldb360/archive/v19.4.zip
-$ unzip v19.4.zip
-$ cd sqldb360-19.4/
-```
-
-
-## 2) Edit the config file to allow batch execution mode
-```
-sed 's/&3./xxx/g ; s/&&custom_config_filename./xxx/g' sql/sqld360_0b_pre.sql > sqld360_0b_pre.sql 
-mv sqld360_0b_pre.sql sql/sqld360_0b_pre.sql
+$ wget https://github.com/karlarao/sqldb360/archive/master.zip
+$ unzip master.zip
+$ cd sqldb360-master/
 ```
 
-
-## 3) Run the tool in batch mode 
+## 2) Run the tool in batch mode 
 ```
 -- on SQL prompt copy pase the following
 
