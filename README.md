@@ -31,7 +31,9 @@ mv sqld360_0b_pre.sql sql/sqld360_0b_pre.sql
 -- login as SYSDBA or any privileged user (DBA role)
 SQL> sqlplus "/ as sysba" 
 
--- You can do a batch run of report generation by inserting the SQL_ID to the plan_table. You can do this by doing manual INSERT or INSERT..SELECT on a filtered list of SQL_IDs. Examples below: 
+-- You can do a batch run of report generation by inserting the SQL_ID to the plan_table. 
+-- You can do this by doing manual INSERT or INSERT..SELECT on a filtered list of SQL_IDs. 
+-- Examples below: 
 
 
 ------------------------------------
