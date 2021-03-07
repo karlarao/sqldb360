@@ -110,17 +110,17 @@ PRO If no custom configuration file is needed, simply hit the "return" key.
 PRO
 PRO Custom configuration filename? (optional)
 COL custom_config_filename NEW_V custom_config_filename NOPRI;
-SELECT NVL(TRIM('&3.'), 'null') custom_config_filename FROM DUAL;
+SELECT NVL(TRIM('xxx'), 'null') custom_config_filename FROM DUAL;
 
 PRO
 PRO ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 PRO
-PRO custom configuration filename: "&&custom_config_filename."
+PRO custom configuration filename: "xxx"
 PRO
 SET SUF '';
-@@&&custom_config_filename.
+@@xxx
 SET SUF sql;
-@@&&custom_config_filename.
+@@xxx
 
 -- suppressing some unnecessary output
 --SET TERM OFF;
