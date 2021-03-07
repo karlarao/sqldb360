@@ -16,7 +16,15 @@ $ unzip master.zip
 $ cd sqldb360-master/
 ```
 
-## 2) Run the tool in batch mode 
+## 2a) Run the tool in single mode for one SQL_ID
+```
+-- login as SYSDBA or any privileged user (DBA role)
+SQL> sqlplus "/ as sysba" 
+@sqld360.sql
+
+```
+
+## 2b) Run the tool in batch mode for multiple SQL_IDs
 ```
 -- on SQL prompt copy pase the following
 
@@ -126,6 +134,24 @@ where rownum < 6;
 # EDB360 
 
 ```
+Execute only sections 1 to 5 (Recommended for faster run)
+@edb360.sql T 1-5
+
+
+****************************************************************************************
+Other example runs:
+
+Execute everything (This will take hours to run)
+@edb360.sql T NULL
+
+Execute only sections 1 to 7a
+@edb360.sql T 1-7a
+
+Execute only section 7
+@edb360.sql T 7
+
+
+****************************************************************************************
 edb360 sections 
 
 1a. Database Configuration
@@ -187,21 +213,6 @@ edb360 sections
 7a. AWR/ADDM/ASH Reports
 7b. SQL Sample
 
-****************************************************************************************
-
-Example runs:
-
-Execute everything 
-@edb360.sql T NULL
-
-Execute only sections 1 to 6
-@edb360.sql T 1-6
-
-Execute only sections 1 to 7a
-@edb360.sql T 1-7a
-
-Execute only section 7
-@edb360.sql T 7
 ```
 
 
