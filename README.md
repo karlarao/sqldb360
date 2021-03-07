@@ -1,7 +1,9 @@
 # SQLdb360
 
 SQLdb360 is a "free to use toolset" to perform an initial assessment of an entire Oracle database or a particular SQL statement.
-SQLdb360 is made of two independent tools, eDB360 (database-wide analysis) and SQLd360 (individual SQL analysis).
+SQLdb360 is made of two independent tools
+       * eDB360 (database-wide analysis) 
+       * SQLd360 (individual SQL analysis)
 
 
 (README edits by Karl Arao)
