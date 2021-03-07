@@ -10,6 +10,11 @@ SQLdb360 is made of two independent tools, eDB360 (database-wide analysis) and S
 
 ## 1) Download the latest verified tag of the tool 
 https://github.com/karlarao/sqldb360/archive/v19.4.zip
+```
+$ wget https://github.com/karlarao/sqldb360/archive/v19.4.zip
+$ unzip v19.4.zip
+$ cd sqldb360-19.4/
+```
 
 
 ## 2) Edit the config file to allow batch execution mode
@@ -21,33 +26,39 @@ mv sqld360_0b_pre.sql sql/sqld360_0b_pre.sql
 
 ## 3) Run the tool in batch mode 
 ```
+-- on SQL prompt copy pase the following
+
 -- login as SYSDBA or any privileged user (DBA role)
 SQL> sqlplus "/ as sysba" 
 
+-- You can do a batch run of report generation by inserting the SQL_ID to the plan_table. You can do this by doing manual INSERT or INSERT..SELECT on a filtered list of SQL_IDs. Examples below: 
 
--- on SQL prompt copy pase the following
 
+------------------------------------
+-- Manual INSERT 
+------------------------------------
 
--- input variables
+-- required input variables
 def edb360_secs2go = 3600
 def psqlid = "sqld360batch"
+-- insert
+INSERT INTO plan_table (id, statement_id, operation, options, object_node) values (dbms_random.value(1,10000), 'SQLD360_SQLID', '0p1f7w41jj1tq', '111007', NULL);
+INSERT INTO plan_table (id, statement_id, operation, options, object_node) values (dbms_random.value(1,10000), 'SQLD360_SQLID', '3ddvj44c10qqx', '111007', NULL);
+INSERT INTO plan_table (id, statement_id, operation, options, object_node) values (dbms_random.value(1,10000), 'SQLD360_SQLID', '3m8smr0v7v1m6', '111007', NULL);
+INSERT INTO plan_table (id, statement_id, operation, options, object_node) values (dbms_random.value(1,10000), 'SQLD360_SQLID', '3nnj1js6gy2yb', '111007', NULL);
+INSERT INTO plan_table (id, statement_id, operation, options, object_node) values (dbms_random.value(1,10000), 'SQLD360_SQLID', '3sqgkcng6vx8r', '111007', NULL);
+-- run SQLD360
+@sqld360.sql 
 
 
--- You can do a batch run of report generation by inserting the SQL_ID to the plan_table. You can do this by doing manual INSERT or INSERT..SELECT on a filtered list of SQL_IDs. Example below: 
-
-
--- Manual INSERT 
-	def edb360_secs2go = 3600
-	INSERT INTO plan_table (id, statement_id, operation, options, object_node) values (dbms_random.value(1,10000), 'SQLD360_SQLID', '0p1f7w41jj1tq', '111007', NULL);
-	INSERT INTO plan_table (id, statement_id, operation, options, object_node) values (dbms_random.value(1,10000), 'SQLD360_SQLID', '3ddvj44c10qqx', '111007', NULL);
-	INSERT INTO plan_table (id, statement_id, operation, options, object_node) values (dbms_random.value(1,10000), 'SQLD360_SQLID', '3m8smr0v7v1m6', '111007', NULL);
-	INSERT INTO plan_table (id, statement_id, operation, options, object_node) values (dbms_random.value(1,10000), 'SQLD360_SQLID', '3nnj1js6gy2yb', '111007', NULL);
-	INSERT INTO plan_table (id, statement_id, operation, options, object_node) values (dbms_random.value(1,10000), 'SQLD360_SQLID', '3sqgkcng6vx8r', '111007', NULL);
-	-- run SQLD360
-	@sqld360.sql 
-
-
+------------------------------------
 -- or run the INSERT..SELECT below
+------------------------------------
+
+-- required input variables
+def edb360_secs2go = 3600
+def psqlid = "sqld360batch"
+-- insert..select
 INSERT INTO plan_table (id, statement_id, operation, options, object_node) 
 select dbms_random.value(1,10000), 'SQLD360_SQLID', sql_id, '111007', NULL from (
 select sql_id,sql_type,module,parsing_schema,
