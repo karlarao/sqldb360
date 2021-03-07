@@ -127,8 +127,95 @@ where rownum < 6;
 ```
 
 
-# Example output 
+## SQLD360 example output 
 <img width="1166" src="https://user-images.githubusercontent.com/3683046/110233253-d83c1880-7ef0-11eb-8478-f6968adf4c4a.png">
+
+
+# EDB360 
+
+```
+edb360 sections 
+
+1a. Database Configuration
+1b. Security
+1c. Auditing
+1d. Memory
+1e. Resources (as per AWR and MEM)
+1f. Resources (as per Statspack)
+
+2a. Database Administration
+2b. Storage
+2c. Automatic Storage Management (ASM)
+2d. Backup and Recovery
+
+3a. Database Resource Management (DBRM)
+3b. Plan Stability
+3c. Cost-based Optimizer (CBO) Statistics
+3d. Performance Summaries
+3e. Operating System (OS) Statistics History
+3h. Sessions
+3i. JDBC Sessions
+3j. Non-JDBC Sessions
+3k. Data Guard Primary Site
+
+4a. System Global Area (SGA) Statistics History
+4b. Program Global Area (PGA) Statistics History
+4c. Memory Statistics History
+4d. System Time Model
+4e. System Time Model Components
+4f. Wait Times and Latency per Class
+4g. Latency Histogram for Top 24 Wait Events
+4h. Average Latency for Top 24 Wait Events
+4i. Waits Count v.s. Average Latency for Top 24 Wait Events
+4j. Parallel Execution
+4k. System Metric History per Snap Interval
+4l. System Metric Summary per Snap Interval
+
+5a. Active Session History (ASH)
+5b. Active Session History (ASH) on Wait Class
+5c. Active Session History (ASH) on CPU and Top 24 Wait Events
+5d. System Statistics per Snap Interval
+5e. System Statistics (Exadata) per Snap Interval
+5f. System Statistics (Current) per Snap Interval
+5g. Exadata
+
+6a. Active Session History (ASH) - Top Timed Classes
+6b. Active Session History (ASH) - Top Timed Events
+6c. Active Session History (ASH) - Top SQL
+6d. Active Session History (ASH) - Top SQL - Time Series
+6e. Active Session History (ASH) - Top Programs
+6f. Active Session History (ASH) - Top Modules and Actions
+6g. Active Session History (ASH) - Top Users
+6h. Active Session History (ASH) - Top PLSQL Procedures
+6i. Active Session History (ASH) - Top Data Objects
+6j. Active Session History (ASH) - Service and User
+6k. Active Session History (ASH) - Top PHV
+6l. Active Session History (ASH) - Top Signature
+
+7a. AWR/ADDM/ASH Reports
+7b. SQL Sample
+
+****************************************************************************************
+
+Example runs:
+
+Execute everything 
+@edb360.sql T NULL
+
+Execute only sections 1 to 6
+@edb360.sql T 1-6
+
+Execute only sections 1 to 7a
+@edb360.sql T 1-7a
+
+Execute only section 7
+@edb360.sql T 7
+```
+
+
+
+
+
 
 
 (Original README below)
